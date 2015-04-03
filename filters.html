@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+	<title>Path of Exile | Loot Filters</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+	<style>
+		body, html {
+			padding: 0;
+			margin: 0;
+		}
+
+		.container {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		.action-link {
+			color: blue;
+			text-decoration: underline;
+			cursor: pointer;
+			display: block;
+		}
+
+		.filter-element {
+			vertical-align: top;
+			background-color: #fafafa;
+		}
+
+		.filter-element:nth-child(2n) {
+			background-color: #c7c7c7;
+		}
+
+		.filter-element select {
+			display: inline-block;
+		}
+
+		.filter-element div {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.filter-element .filter-additional-params .filter-additional {
+			display: block;
+		}
+		.filter-element .filter-item-type .filter-additional {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="eight columns">
+				<div class="row" style="min-height: 60vh; padding: 10px;">
+					<span class="action-link" data-bind="click: addNewFilter">Create a new Filter</span>
+					<div data-bind="foreach: filters">
+						<div data-bind="template: { name: 'filter-template', data: $data }"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="pure-text-filter" style="background-color: #333; color: #f7f7f7; width: 100%; padding-left: 20px; height: 100%;" contenteditable>
+						<pre>Bla blah blah</pre>
+					</div>
+				</div>
+			</div>
+			<div class="four columns" style="background-color: #345678; height: 100vh;">
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-debug.js"></script>
+	<script type="text/html" id="filter-template">
+		<div class="filter-element">
+			<div class="filter-show-hide">
+				<select data-bind="value: Show">
+					<option value="show">Show</option>
+					<option value="hide">Hide</option>
+				</select>
+			</div>
+			<div class="filter-item-type">
+				<div data-bind="foreach: ItemTypes">
+					<div class="filter-additional">
+						<select data-bind="value: $data">
+							<option>Amulets</option>
+							<option>Gems</option>
+							<option>Gavel</option>
+						</select>
+					</div>
+				</div>
+				<span class="action-link" data-bind="click: AddItemType">Add another item type</span>
+			</div>
+			<div class="filter-additional-params">
+				<div data-bind="foreach: AdditionalFilters">
+					<div class="filter-additional">
+						<select data-bind="value: FilterType">
+							<option value="ilvl">Item Level</option>
+							<option value="rarity">Rarity</option>
+						</select>
+						<select data-bind="visible: NeedsComparator, value: FilterComparator">
+							<option value="l">Less than</option>
+							<option value="le">Less than or equal to</option>
+							<option value="e">Equal to</option>
+							<option value="ge">Greater than or equal to</option>
+							<option value="g">Greater than</option>
+						</select>
+						<input type="text" data-bind="visible: NeedsValue, value: FilterValue">
+					</div>
+				</div>
+				<span class="action-link" data-bind="click: AddFilter">Add another parameter</span>
+			</div>
+		</div>
+	</script>
+	<script type="text/javascript">
+		function AdditionalFilter() {
+			this.FilterType = "ilvl";
+			this.NeedsComparator = true;
+			this.NeedsValue = true;
+
+			this.FilterComparator = "l";
+			this.FilterValue = "0";
+		}
+
+		function FilterViewModel() {
+			this.Show = "show";
+			this.ItemTypes = ko.observableArray(["amulet"]);
+			this.AdditionalFilters = ko.observableArray([]);
+			this.AddFilter = function() {
+				console.log("we adding");
+				this.AdditionalFilters.push(new AdditionalFilter());
+			}
+			this.AddItemType = function() {
+				this.ItemTypes.push("amulet");
+			}
+		}
+
+		var AppViewModel = {
+			filters: ko.observableArray([
+				new FilterViewModel()
+			]),
+			addNewFilter: function() {
+				console.log('filters yo');
+				this.filters.push(new FilterViewModel());
+			}
+		};
+
+		for (var i = AppViewModel.filters.length - 1; i >= 0; i--) {
+			//ko.applyBindings(this.Filters[i]);
+		};
+
+		ko.applyBindings(AppViewModel);
+	</script>
+</body>
+</html>
