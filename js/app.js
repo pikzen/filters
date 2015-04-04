@@ -29,7 +29,9 @@ function AdditionalFilter() {
 	this.FilterType = ko.observable("ilvl");
 	this.NeedsComparator = ko.computed(function() {
 		return self.FilterType() == "ilvl" ||
-		       self.FilterType() == "rarity";
+		       self.FilterType() == "rarity" ||
+		       self.FilterType() == "sockets" ||
+		       self.FilterType() == "linked";
 	});
 	this.NeedsValue = ko.computed(function() {
 		return self.FilterType() != "class" &&
@@ -137,7 +139,7 @@ function AppViewModel() {
 		this.translator["comparators"] = [];
 		this.translator["comparators"]['l']  = "<";
 		this.translator["comparators"]['le'] = "<=";
-		this.translator["comparators"]['e']  = "=";
+		this.translator["comparators"]['e']  = "";
 		this.translator["comparators"]['ge'] = ">=";
 		this.translator["comparators"]['g']  = ">";
 
