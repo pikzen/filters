@@ -1,0 +1,110 @@
+body, html {
+	padding: 0;
+	margin: 0;
+	background-color: #e7e7e7;
+}
+
+.container {
+	width: 100%;
+	max-width: 100%;
+}
+
+.row.respect-size {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: #FF9D00;
+	background-image: url("../images/background.png");
+}
+header h1 {
+	color: white;
+	text-align: center;
+	padding: 50px;
+}
+
+header .menu-selector-bar {
+	height: 50px;
+	width: 100%;
+	background-color: #FF6D00;
+	vertical-align: bottom;
+	text-align: center;
+}
+
+header .menu-selector-bar .menu-item {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 50px;
+	display: inline-block;
+	line-height: 50px;
+}
+
+header .menu-selector-bar .menu-item:hover {
+	background-color: #FF4D00;
+}
+
+.action-link {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+	display: block;
+	vertical-align: bottom;
+}
+
+.filter-element .filter {
+	display: block;
+}
+
+.action-link.action-link-inline {
+	display: inline-block;
+	padding-bottom: 15px;
+}
+
+.borderbox {
+	background-color: #444;
+	color: white;
+	padding: 6px;
+}
+
+.bgbox {
+	color: white;
+	padding: 6px;
+}
+
+select option.separator {
+	background-color: #ccc;
+}
+
+.filter-element {
+	vertical-align: top;
+	background-color: #fff;
+	margin: 10px;
+	box-shadow: 0 0 5px 1px #ccc;
+	padding: 10px;
+}
+
+.filter-show-hide, .filter-item-type, .filter-additional-params {
+	height: 100%;
+	display: inline-block;
+}
+
+.filter-element:nth-child(2n) {
+	background-color: #c7c7c7;
+}
+
+.filter-element select {
+	display: inline-block;
+}
+
+.filter-element div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.filter-element .filter-additional-params .filter-additional {
+	display: block;
+}
+.filter-element .filter-item-type .filter-additional {
+	display: block;
+}
