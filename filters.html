@@ -36,572 +36,577 @@
 		<div class="filter-element">
 			<span class="action-link action-link-inline" data-bind="click: dropFilter">Delete this filter</span>
 			<span class="action-link action-link-inline" data-bind="click: moveToTop">Move this filter to top</span>
-			<div class="filter-show-hide filter">
-				<select data-bind="value: Show">
-					<option value="show">Show</option>
-					<option value="hide">Hide</option>
-				</select>
-			</div>
-			<div class="filter-additional-params filter">
-				<div data-bind="foreach: AdditionalFilters">
-					<div class="filter-additional">
-						<select data-bind="value: FilterType">
-							<option value="ilvl">Item Level</option>
-							<option value="rarity">Rarity</option>
-							<option value="basetype">Base Type</option>
-							<option value="class">Class</option>
-							<option value="droplevel">Drop Level</option>
-							<option value="quality">Quality</option>
-							<option value="sockets">Sockets</option>
-							<option value="linked">Linked Sockets</option>
-							<option value="socketgroup">Socket Groups</option>
-							<option value="bordercolor">Border Color</option>
-							<option value="bgcolor">Background Color</option>
-							<option value="sound">Play Alert Sound n°</option>
-						</select>
-						<select data-bind="visible: NeedsComparator, value: FilterComparator">
-							<option value="l">Less than</option>
-							<option value="le">Less than or equal to</option>
-							<option value="e">Equal to</option>
-							<option value="ge">Greater than or equal to</option>
-							<option value="g">Greater than</option>
-						</select>
-						<select data-bind="visible: NeedsRarity, value: FilterRarity">
-							<option value="normal">Normal</option>
-							<option value="magic">Magic</option>
-							<option value="rare">Rare</option>
-							<option value="unique">Unique</option>
-						</select>
-						<div data-bind="visible: NeedsBGColor, style: { 'backgroundColor': FilterBGColor() }" class="bgbox">Item Name</div>
-						<div data-bind="visible: NeedsBorderColor, style: { border: FilterBorderColor() }" class="borderbox">Item Name</div>
-						<select data-bind="visible: NeedsClass, value: FilterClass">
-							<option value="weapons">Weapons</option>
-							<option value="chests">Chestpieces</option>
-							<option value="helms">Helmets</option>
-							<option value="shields">Shields</option>
-							<option value="boots">Boots</option>
-							<option value="gloves">Gloves</option>
-							<option value="rings">Rings</option>
-							<option value="belts">Belts</option>
-							<option value="amulets">Amulets</option>
-							<option value="gems">Gems</option>
-						</select>
-						<select data-bind="visible: NeedsBaseType, value: FilterBaseType">
-							<option value="cancel" class="separator">Axes -------------------------</option>
-							<option value="armingaxe">Arming Axe</option>
-							<option value="boardingaxe">Boarding Axe</option>
-							<option value="broadaxe">Broad Axe</option>
-							<option value="butcheraxe">Butcher Axe</option>
-							<option value="ceremonialaxe">Ceremonial Axe</option>
-							<option value="chestsplitter">Chest Splitter</option>
-							<option value="cleaver">Cleaver</option>
-							<option value="decorativeaxe">Decorative Axe</option>
-							<option value="infernalaxe">Infernal Axe</option>
-							<option value="jadehatchet">Jade Hatchet</option>
-							<option value="jasperaxe">Jasper Axe</option>
-							<option value="karuiaxe">Karui Axe</option>
-							<option value="reaveraxe">Reaver Axe</option>
-							<option value="royalaxe">Royal Axe</option>
-							<option value="rustedhatchet">Rusted Hatchet</option>
-							<option value="siegeaxe">Siege Axe</option>
-							<option value="spectralaxe">Spectral Axe</option>
-							<option value="tomahawk">Tomahawk</option>
-							<option value="vaalhatchet">Vaal Hatchet</option>
-							<option value="waraxe">War Axe</option>
-							<option value="wraithaxe">Wraith Axe</option>
-							<option value="wristchopper">Wrist Chopper</option>
-
-							<option value="cancel" class="separator">Two Handed Axes --------------</option>
-							<option value="abyssalaxe">Abyssal Axe</option>
-							<option value="despotaxe">Despot Axe</option>
-							<option value="doubleaxe">Double Axe</option>
-							<option value="ezomyteaxe">Ezomyte Axe</option>
-							<option value="gildedaxe">Gilded Axe</option>
-							<option value="headsmanaxe">Headsman Axe</option>
-							<option value="jadechopper">Jade Chopper</option>
-							<option value="jasperchopper">Jasper Chopper</option>
-							<option value="karuichopper">Karui Chopper</option>
-							<option value="labrys">Labrys</option>
-							<option value="nobleaxe">Noble Axe</option>
-							<option value="poleaxe">Poleaxe</option>
-							<option value="shadowaxe">Shadow Axe</option>
-							<option value="stoneaxe">Stone Axe</option>
-							<option value="sunderingaxe">Sundering Axe</option>
-							<option value="timberaxe">Timber Axe</option>
-							<option value="vaalaxe">Vaal Axe</option>
-							<option value="voidaxe">Void Axe</option>
-							<option value="woodsplitter">Woodsplitter</option>
-
-							<option value="cancel" class="separator">Bows -------------------------</option>
-							<option value="bonebow">Bone Bow</option>
-							<option value="citadelbow">Citadel Bow</option>
-							<option value="compositebow">Composite Bow</option>
-							<option value="compoundbow">Compound Bow</option>
-							<option value="crudebow">Crude Bow</option>
-							<option value="deathbow">Death Bow</option>
-							<option value="decimationbow">Decimation Bow</option>
-							<option value="decurvebow">Decurve Bow</option>
-							<option value="grovebow">Grove Bow</option>
-							<option value="harbingerbow">Harbinger Bow</option>
-							<option value="highbornbow">Highborn Bow</option>
-							<option value="imperialbow">Imperial Bow</option>
-							<option value="ivorybow">Ivory Bow</option>
-							<option value="longbow">Long Bow</option>
-							<option value="marakethbow">Maraketh Bow</option>
-							<option value="rangerbow">Ranger Bow</option>
-							<option value="recurvebow">Recurve Bow</option>
-							<option value="royalbow">Royal Bow</option>
-							<option value="shortbow">Short Bow</option>
-							<option value="sniperbow">Sniper Bow</option>
-							<option value="spinebow">Spine Bow</option>
-							<option value="thicketbow">Thicket Bow</option>
-
-							<option value="cancel" class="separator">Claws ------------------------</option>
-							<option value="awl">Awl</option>
-							<option value="blinder">Blinder</option>
-							<option value="catspaw">Cat's Paw</option>
-							<option value="eagleclaw">Eagle Claw</option>
-							<option value="eyegouger">Eye Gouger</option>
-							<option value="frightclaw">Fright Claw</option>
-							<option value="gouger">Gouger</option>
-							<option value="greatwhiteclaw">Great White Claw</option>
-							<option value="gutripper">Gut Ripper</option>
-							<option value="hellionspaw">Hellion's Paw</option>
-							<option value="imperialclaw">Imperial Claw</option>
-							<option value="nailedfist">Nailed Fist</option>
-							<option value="nobleclaw">Noble Claw</option>
-							<option value="prehistoricclaw">Prehistoric Claw</option>
-							<option value="sharktoothclaw">Sharktooth Claw</option>
-							<option value="sparklingclaw">Sparkling Claw</option>
-							<option value="terrorclaw">Terror Claw</option>
-							<option value="thresherclaw">Thresher Claw</option>
-							<option value="throatstabber">Throat Stabber</option>
-							<option value="tigerspaw">Tiger's Paw</option>
-							<option value="timewornclaw">Timeworn Claw</option>
-							<option value="vaalclaw">Vaal Claw</option>
-							<!-- Cancel that ' ok -->
-
-							<option value="cancel" class="separator">Daggers ----------------------</option>
-							<option value="ambusher">Ambusher</option>
-							<option value="bootblade">Boot Blade</option>
-							<option value="bootknife">Boot Knife</option>
-							<option value="butcherknife">Butcher Knife</option>
-							<option value="carvingknife">Carving Knife</option>
-							<option value="copperkris">Copper Kris</option>
-							<option value="demondagger">Demon Dagger</option>
-							<option value="ezomytedagger">Ezomyte Dagger</option>
-							<option value="fienddagger">Fiend Dagger</option>
-							<option value="flayingknife">Flaying Knife</option>
-							<option value="glassshank">Glass Shank</option>
-							<option value="goldenkris">Golden Kris</option>
-							<option value="guttingknife">Gutting Knife</option>
-							<option value="impdagger">Imp Dagger</option>
-							<option value="imperialskean">Imperial Skean</option>
-							<option value="platinumkris">Platinum Kris</option>
-							<option value="poignard">Poignard</option>
-							<option value="royalskean">Royal Skean</option>
-							<option value="skean">Skean</option>
-							<option value="skinningknife">Skinning Knife</option>
-							<option value="slaughterknife">Slaughter Knife</option>
-							<option value="stiletto">Stiletto</option>
-
-							<option value="cancel" class="separator">Maces ------------------------</option>
-							<option value="ancestralclub">Ancestral Club</option>
-							<option value="auricmace">Auric Mace</option>
-							<option value="barbedclub">Barbed Club</option>
-							<option value="battlehammer">Battle Hammer</option>
-							<option value="bladedmace">Bladed Mace</option>
-							<option value="ceremonialmace">Ceremonial Mace</option>
-							<option value="dreammace">Dream Mace</option>
-							<option value="driftwoodclub">Driftwood Club</option>
-							<option value="flangedmace">Flanged Mace</option>
-							<option value="gavel">Gavel</option>
-							<option value="legionhammer">Legion Hammer</option>
-							<option value="nightmaremace">Nightmare Mace</option>
-							<option value="ornatemace">Ornate Mace</option>
-							<option value="pernarch">Pernarch</option>
-							<option value="petrifiedclub">Petrified Club</option>
-							<option value="phantommace">Phantom Mace</option>
-							<option value="rockbreaker">Rock Breaker</option>
-							<option value="spikedclub">Spiked Club</option>
-							<option value="stonehammer">Stone Hammer</option>
-							<option value="tenderizer">Tenderizer</option>
-							<option value="tribalclub">Tribal Club</option>
-							<option value="warhammer">War Hammer</option>
-							
-							<option value="cancel" class="separator">Two Handed Maces -------------</option>
-							<option value="brassmaul">Brass Maul</option>
-							<option value="colossusmallet">Colossus Mallet</option>
-							<option value="dreadmaul">Dread Maul</option>
-							<option value="driftwoodmaul">Driftwood Maul</option>
-							<option value="frightmaul">Fright Maul</option>
-							<option value="greatmallet">Great Mallet</option>
-							<option value="imperialmaul">Imperial Maul</option>
-							<option value="karuimaul">Karui Maul</option>
-							<option value="mallet">Mallet</option>
-							<option value="meatgrinder">Meatgrinder</option>
-							<option value="piledriver">Piledriver</option>
-							<option value="platedmaul">Plated Maul</option>
-							<option value="sledgehammer">Sledgehammer</option>
-							<option value="spikedmaul">Spiked Maul</option>
-							<option value="spinymaul">Spiny Maul</option>
-							<option value="steelhead">Steelhead</option>
-							<option value="terrormaul">Terror Maul</option>
-							<option value="totemicmaul">Totemic Maul</option>
-							<option value="tribalmaul">Tribal Maul</option>
-							
-							<option value="cancel" class="separator">Sceptres ---------------------</option>
-							<option value="abyssalsceptre">Abyssal Sceptre</option>
-							<option value="bloodsceptre">Blood Sceptre</option>
-							<option value="bronzesceptre">Bronze Sceptre</option>
-							<option value="carnalsceptre">Carnal Sceptre</option>
-							<option value="crystalsceptre">Crystal Sceptre</option>
-							<option value="darkwoodsceptre">Darkwood Sceptre</option>
-							<option value="driftwoodsceptre">Driftwood Sceptre</option>
-							<option value="grinningfetish">Grinning Fetish</option>
-							<option value="ironsceptre">Iron Sceptre</option>
-							<option value="karuisceptre">Karui Sceptre</option>
-							<option value="leadsceptre">Lead Sceptre</option>
-							<option value="ochresceptre">Ochre Sceptre</option>
-							<option value="opalsceptre">Opal Sceptre</option>
-							<option value="platinumsceptre">Platinum Sceptre</option>
-							<option value="quartzsceptre">Quartz Sceptre</option>
-							<option value="ritualsceptre">Ritual Sceptre</option>
-							<option value="royalsceptre">Royal Sceptre</option>
-							<option value="sekhem">Sekhem</option>
-							<option value="shadowsceptre">Shadow Sceptre</option>
-							<option value="tyrantssekhem">Tyrant's Sekhem</option>
-							<option value="vaalsceptre">Vaal Sceptre</option>
-							<option value="voidsceptre">Void Sceptre</option>
-							<!-- Cancel that ' ok -->
-							
-							<option value="cancel" class="separator">Staves -----------------------</option>
-							<option value="coiledstaff">Coiled Staff</option>
-							<option value="ezomytestaff">Ezomyte Staff</option>
-							<option value="foulstaff">Foul Staff</option>
-							<option value="gnarledbranch">Gnarled Branch</option>
-							<option value="highbornstaff">Highborn Staff</option>
-							<option value="imperialstaff">Imperial Staff</option>
-							<option value="ironstaff">Iron Staff</option>
-							<option value="judgementstaff">Judgement Staff</option>
-							<option value="lathi">Lathi</option>
-							<option value="longstaff">Long Staff</option>
-							<option value="maelstromstaff">Maelström Staff</option>
-							<option value="militarystaff">Military Staff</option>
-							<option value="primitivestaff">Primitive Staff</option>
-							<option value="primordialstaff">Primordial Staff</option>
-							<option value="quarterstaff">Quarter Staff</option>
-							<option value="royalstaff">Royal Staff</option>
-							<option value="serpentinestaff">Serpentine Staff</option>
-							<option value="vilestaff">Vile Staff</option>
-							<option value="woodfulstaff">Woodful Staff</option>
-							
-							<option value="cancel" class="separator">Swords -----------------------</option>
-							<option value="ancientsword">Ancient Sword</option>
-							<option value="baselard">Baselard</option>
-							<option value="battlesword">Battle Sword</option>
-							<option value="broadsword">Broad Sword</option>
-							<option value="coppersword">Copper Sword</option>
-							<option value="corsairsword">Corsair Sword</option>
-							<option value="cutlass">Cutlass</option>
-							<option value="duskblade">Dusk Blade</option>
-							<option value="eldersword">Elder Sword</option>
-							<option value="elegantsword">Elegant Sword</option>
-							<option value="eternalsword">Eternal Sword</option>
-							<option value="gemstonesword">Gemstone Sword</option>
-							<option value="gladius">Gladius</option>
-							<option value="gracefulsword">Graceful Sword</option>
-							<option value="legionsword">Legion Sword</option>
-							<option value="midnightblade">Midnight Blade</option>
-							<option value="rustedsword">Rusted Sword</option>
-							<option value="sabre">Sabre</option>
-							<option value="twilightblade">Twilight Blade</option>
-							<option value="vaalblade">Vaal Blade</option>
-							<option value="varisciteblade">Variscite Blade</option>
-							<option value="warsword">War Sword</option>
-							
-							<option value="cancel" class="separator">Thrusting Swords -------------</option>
-							<option value="antiquerapier">Antique Rapier</option>
-							<option value="apexrapier">Apex Rapier</option>
-							<option value="basketrapier">Basket Rapier</option>
-							<option value="batteredfoil">Battered Foil</option>
-							<option value="burnishedfoil">Burnished Foil</option>
-							<option value="dragonbonerapier">Dragonbone Rapier</option>
-							<option value="elegantfoil">Elegant Foil</option>
-							<option value="estoc">Estoc</option>
-							<option value="fancyfoil">Fancy Foil</option>
-							<option value="harpyrapier">Harpy Rapier</option>
-							<option value="jaggedfoil">Jagged Foil</option>
-							<option value="jewelledfoil">Jewelled Foil</option>
-							<option value="pecoraro">Pecoraro</option>
-							<option value="primevalrapier">Primeval Rapier</option>
-							<option value="rustedspike">Rusted Spike</option>
-							<option value="serratedfoil">Serrated Foil</option>
-							<option value="spiraledfoil">Spiraled Foil</option>
-							<option value="temperedfoil">Tempered Foil</option>
-							<option value="thornrapier">Thorn Rapier</option>
-							<option value="vaalrapier">Vaal Rapier</option>
-							<option value="whalebonerapier">Whalebone Rapier</option>
-							<option value="wyrmbonerapier">Wyrmbone Rapier</option>
-
-							<option value="cancel" class="separator">Two Handed Swords ------------</option>
-							<option value="bastardsword">Bastard Sword</option>
-							<option value="butchersword">Butcher Sword</option>
-							<option value="corrodedblade">Corroded Blade</option>
-							<option value="engravedgreatsword">Engraved Greatsword</option>
-							<option value="etchedgreatsword">Etched Greatsword</option>
-							<option value="ezomyteblade">Ezomyte Blade</option>
-							<option value="footmansword">Footman Sword</option>
-							<option value="headmanssword">Headman's Sword</option>
-							<option value="highlandblade">Highland Blade</option>
-							<option value="infernalsword">Infernal Sword</option>
-							<option value="lionsword">Lion Sword</option>
-							<option value="longsword">Long Sword</option>
-							<option value="ornatesword">Ornate Sword</option>
-							<option value="reaversword">Reaver Sword</option>
-							<option value="spectralsword">Spectral Sword</option>
-							<option value="tigersword">Tiger Sword</option>
-							<option value="twohandedsword">Two Handed Sword</option>
-							<option value="vaalgreatsword">Vaal Greatsword</option>
-							<option value="wraithsword">Wraith Sword</option>
-							<!-- Cancel that ' ok -->
-							
-							<option value="cancel" class="separator">Wands ------------------------</option>
-							<option value="carvedwand">Carved Wand</option>
-							<option value="crystalwand">Crystal Wand</option>
-							<option value="demonshorn">Demon's Horn</option>
-							<option value="driftwoodwand">Driftwood Wand</option>
-							<option value="engravedwand">Engraved Wand</option>
-							<option value="faunshorn">Faun's Horn</option>
-							<option value="goatshorn">Goat's Horn</option>
-							<option value="imbuedwand">Imbued Wand</option>
-							<option value="omenwand">Omen Wand</option>
-							<option value="opalwand">Opal Wand</option>
-							<option value="prophecywand">Prophecy Wand</option>
-							<option value="quartzwand">Quartz Wand</option>
-							<option value="sagewand">Sage Wand</option>
-							<option value="serpentwand">Serpent Wand</option>
-							<option value="spiraledwand">Spiraled Wand</option>
-							<option value="tornadowand">Tornado Wand</option>
-							<!-- Cancel that ' ok -->
-
-							<option value="cancel" class="separator">Chests - Armour --------------</option>
-							<option value="arenaplate">Arena Plate</option>
-							<option value="astralplate">Astral Plate</option>
-							<option value="battleplate">Battle Plate</option>
-							<option value="bronzeplate">Bronze Plate</option>
-							<option value="chestplate">Chest Plate</option>
-							<option value="colosseumplate">Colosseum Plate</option>
-							<option value="copperplate">Copper Plate</option>
-							<option value="crusaderplate">Crusade Plate</option>
-							<option value="fullplate">Full Plate</option>
-							<option value="gladiatorplate">Gladiator Plate</option>
-							<option value="gloriousplate">Glorious Plate</option>
-							<option value="goldenplate">Golden Plate</option>
-							<option value="lordlyplate">Lordly Plate</option>
-							<option value="majesticplate">Majestic Plate</option>
-							<option value="platevest">Plate Vest</option>
-							<option value="sunplate">Sun Plate</option>
-							<option value="warplate">War Plate</option>
-							
-							<option value="cancel" class="separator">Chests - Evasion -------------</option>
-							<option value="assassinsgarb">Asassin's Garb</option>
-							<option value="buckskintunic">Buckskin Tunic</option>
-							<option value="coronalleather">Coronal Leather</option>
-							<option value="cutthroatsgarb">Cutthroat's Garb</option>
-							<option value="destinyleather">Destiny Leather</option>
-							<option value="eelskintunic">Eelskin Tunic</option>
-							<option value="exquisiteleather">Exquisite Leather</option>
-							<option value="frontierleather">Frontier Leather</option>
-							<option value="fullleather">Full Leather</option>
-							<option value="gloriousleather">Glorious Leather</option>
-							<option value="shabbyjerkin">Shabby Jerkin</option>
-							<option value="sharkskintunic">Sharkskin Tunic</option>
-							<option value="strappedleather">Strapped Leather</option>
-							<option value="sunleather">Sun Leather</option>
-							<option value="thiefsgarb">Thief's Garb</option>
-							<option value="wildleather">Wild Leather</option>
-							<option value="zodiacleather">Zodiac Leather</option>
-							<!-- Cancel that ' ok -->
-
-							<option value="cancel" class="separator">Chests - Energy Shield -------</option>
-							<option value="cabalistregalia">Cabalist Regalia</option>
-							<option value="conjurersvestment">Conjurer's Vestment</option>
-							<option value="destroyerregalia">Destroyer Regalia</option>
-							<option value="magesvestment">Mage's Vestment</option>
-							<option value="necromancersilks">Necromancer Silks</option>
-							<option value="occultistsvestment">Occultist's Vestment</option>
-							<option value="sagesrobe">Sage's Robe</option>
-							<option value="savantsrobe">Savant's Robe</option>
-							<option value="scholarsrobe">Scholar's Robe</option>
-							<option value="silkrobe">Silk Robe</option>
-							<option value="silkengarb">Silken Garb</option>
-							<option value="silkenvest">Silken Vest</option>
-							<option value="silkenwrap">Silken Wrap</option>
-							<option value="simplerobe">Simple Robe</option>
-							<option value="spidersilkrobe">Spidersilk Robe</option>
-							<option value="vaalregalia">Vaal Regalia</option>
-							<option value="widowsilkrobe">Widowsilk Robe</option>
-							
-							<option value="cancel" class="separator">Chests - Armour/Evasion ------</option>
-							<option value="battlelamellar">Battle Lamellar</option>
-							<option value="commandersbrigandine">Commander's Brigandine</option>
-							<option value="desertbrigandine">Desert Brigandine</option>
-							<option value="dragonscaledoublet">Dragonscale Doublet</option>
-							<option value="fieldlamellar">Field Lamellar</option>
-							<option value="fulldragonscale">Full Dragonscale</option>
-							<option value="fullscalearmour">Full Scale Armour</option>
-							<option value="fullwyrmscale">Full Wyrmscale</option>
-							<option value="generalsbrigandine">General's Brigandine</option>
-							<option value="hussarbrigandine">Hussar Brigandine</option>
-							<option value="infantrybrigandine">Infantry Brigandine</option>
-							<option value="lightbrigandine">Light Brigandine</option>
-							<option value="scaledoublet">Scale Doublet</option>
-							<option value="scalevest">Scale Vest</option>
-							<option value="soldiersbrigandine">Soldier's Brigandine</option>
-							<option value="triumphantlamellar">Triumphant Lamellar</option>
-							<option value="wyrmscaledoublet">Wyrmscale Doublet</option>
-							<!-- Cancel that ' ok -->
-
-
-							<option value="cancel" class="separator">Chests - Armour/Energy Shield </option>
-							<option value="chainhauberk">Chain Hauberk</option>
-							<option value="chainmaildoublet">Chainmail Doublet</option>
-							<option value="chainmailtunic">Chainmail Tunic</option>
-							<option value="chainmailvest">Chainmail Vest</option>
-							<option value="conquestchainmail">Conquest Chainmail</option>
-							<option value="crusaderchainmail">Crusader Chainmail</option>
-							<option value="devoutchainmail">Devout Chainmail</option>
-							<option value="elegantringmail">Elegant Ringmail</option>
-							<option value="fullchainmail">Full Chainmail</option>
-							<option value="fullringmail">Full Ringmail</option>
-							<option value="holychainmail">Holy Chainmail</option>
-							<option value="latticedringmail">Latticed Ringmail</option>
-							<option value="loricatedringmail">Loricated Ringmail</option>
-							<option value="ornateringmail">Ornate Ringmail</option>
-							<option value="ringmailcoat">Ringmail Coat</option>
-							<option value="saintshauberk">Saint's Hauberk</option>
-							<option value="saintlychainmail">Saintly Chainmail</option>
-							<!-- Cancel that ' ok -->
-
-							<option value="cancel" class="separator">Chests - Evasion/Energy Shield</option>
-							<option value="bloodraiment">Blood Raiment</option>
-							<option value="bonearmour">Bone Armour</option>
-							<option value="carnalarmour">Carnal Armour</option>
-							<option value="crimsonraiment">Crimson Raiment</option>
-							<option value="cryptarmour">Crypt Armour</option>
-							<option value="lacqueredgarb">Lacquered Garb</option>
-							<option value="oiledcoat">Oiled Coat</option>
-							<option value="oiledvest">Oiled Vest</option>
-							<option value="paddedjacket">Padded Jacket</option>
-							<option value="paddedvest">Padded Vest</option>
-							<option value="quiltedjacket">Quilted Jacket</option>
-							<option value="sadistgarb">Sadist Garb</option>
-							<option value="scarletraiment">Scarlet Raiment</option>
-							<option value="sentineljacket">Sentinel Jacket</option>
-							<option value="sleekcoat">Sleek Coat</option>
-							<option value="varnishedcoat">Varnished Coat</option>
-							<option value="waxedgarb">Waxed Garb</option>
-							
-							<option value="cancel" class="separator">Chest - Three stats ----------</option>
-							<option value="Sacrificial Garb">Sacrificial Garb</option>
-
-							<!--<option value="cancel" class="separator">Tower Shield -----------------</option>
-							<option value="bronzetowershield"
-							<option value="buckskintowershield
-							<option value="cedartowershield
-							<option value="colossaltowershield
-							<option value="coppertowershield
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="
-							<option value="-->
-
-						<input type="text" data-bind="visible: NeedsValue, value: FilterValue, valueUpdate: 'afterkeydown'">
-						<span class="delete" data-bind="click: $parent.DeleteFilter">Delete</span>
-					</div>
+			<input type="checkbox" data-bind="attr: { name: AttrName(), id: AttrName()}, checked: collapseFilter">
+			<label class="collapse-button" data-bind="attr: {for: AttrName()}" style="display: inline-block">Collapse this filter</label>
+			<div class="box-separator" data-bind="visible: collapseFilter() == false"></div>
+			<div class="collapse-holder" data-bind="visible: collapseFilter() == false">
+				<div class="filter-show-hide filter">
+					<select data-bind="value: Show">
+						<option value="show">Show</option>
+						<option value="hide">Hide</option>
+					</select>
 				</div>
-				<span class="action-link" data-bind="click: AddFilter">Add another parameter</span>
+				<div class="filter-additional-params filter">
+					<div data-bind="foreach: AdditionalFilters">
+						<div class="filter-additional">
+							<select data-bind="value: FilterType">
+								<option value="ilvl">Item Level</option>
+								<option value="rarity">Rarity</option>
+								<option value="basetype">Base Type</option>
+								<option value="class">Class</option>
+								<option value="droplevel">Drop Level</option>
+								<option value="quality">Quality</option>
+								<option value="sockets">Sockets</option>
+								<option value="linked">Linked Sockets</option>
+								<option value="socketgroup">Socket Groups</option>
+								<option value="bordercolor">Border Color</option>
+								<option value="bgcolor">Background Color</option>
+								<option value="sound">Play Alert Sound n°</option>
+							</select>
+							<select data-bind="visible: NeedsComparator, value: FilterComparator">
+								<option value="l">Less than</option>
+								<option value="le">Less than or equal to</option>
+								<option value="e">Equal to</option>
+								<option value="ge">Greater than or equal to</option>
+								<option value="g">Greater than</option>
+							</select>
+							<select data-bind="visible: NeedsRarity, value: FilterRarity">
+								<option value="normal">Normal</option>
+								<option value="magic">Magic</option>
+								<option value="rare">Rare</option>
+								<option value="unique">Unique</option>
+							</select>
+							<div data-bind="visible: NeedsBGColor, style: { 'backgroundColor': FilterBGColor() }" class="bgbox">Item Name</div>
+							<div data-bind="visible: NeedsBorderColor, style: { border: FilterBorderColor() }" class="borderbox">Item Name</div>
+							<select data-bind="visible: NeedsClass, value: FilterClass">
+								<option value="weapons">Weapons</option>
+								<option value="chests">Chestpieces</option>
+								<option value="helms">Helmets</option>
+								<option value="shields">Shields</option>
+								<option value="boots">Boots</option>
+								<option value="gloves">Gloves</option>
+								<option value="rings">Rings</option>
+								<option value="belts">Belts</option>
+								<option value="amulets">Amulets</option>
+								<option value="gems">Gems</option>
+							</select>
+							<select data-bind="visible: NeedsBaseType, value: FilterBaseType">
+								<option value="cancel" class="separator">Axes -------------------------</option>
+								<option value="armingaxe">Arming Axe</option>
+								<option value="boardingaxe">Boarding Axe</option>
+								<option value="broadaxe">Broad Axe</option>
+								<option value="butcheraxe">Butcher Axe</option>
+								<option value="ceremonialaxe">Ceremonial Axe</option>
+								<option value="chestsplitter">Chest Splitter</option>
+								<option value="cleaver">Cleaver</option>
+								<option value="decorativeaxe">Decorative Axe</option>
+								<option value="infernalaxe">Infernal Axe</option>
+								<option value="jadehatchet">Jade Hatchet</option>
+								<option value="jasperaxe">Jasper Axe</option>
+								<option value="karuiaxe">Karui Axe</option>
+								<option value="reaveraxe">Reaver Axe</option>
+								<option value="royalaxe">Royal Axe</option>
+								<option value="rustedhatchet">Rusted Hatchet</option>
+								<option value="siegeaxe">Siege Axe</option>
+								<option value="spectralaxe">Spectral Axe</option>
+								<option value="tomahawk">Tomahawk</option>
+								<option value="vaalhatchet">Vaal Hatchet</option>
+								<option value="waraxe">War Axe</option>
+								<option value="wraithaxe">Wraith Axe</option>
+								<option value="wristchopper">Wrist Chopper</option>
+
+								<option value="cancel" class="separator">Two Handed Axes --------------</option>
+								<option value="abyssalaxe">Abyssal Axe</option>
+								<option value="despotaxe">Despot Axe</option>
+								<option value="doubleaxe">Double Axe</option>
+								<option value="ezomyteaxe">Ezomyte Axe</option>
+								<option value="gildedaxe">Gilded Axe</option>
+								<option value="headsmanaxe">Headsman Axe</option>
+								<option value="jadechopper">Jade Chopper</option>
+								<option value="jasperchopper">Jasper Chopper</option>
+								<option value="karuichopper">Karui Chopper</option>
+								<option value="labrys">Labrys</option>
+								<option value="nobleaxe">Noble Axe</option>
+								<option value="poleaxe">Poleaxe</option>
+								<option value="shadowaxe">Shadow Axe</option>
+								<option value="stoneaxe">Stone Axe</option>
+								<option value="sunderingaxe">Sundering Axe</option>
+								<option value="timberaxe">Timber Axe</option>
+								<option value="vaalaxe">Vaal Axe</option>
+								<option value="voidaxe">Void Axe</option>
+								<option value="woodsplitter">Woodsplitter</option>
+
+								<option value="cancel" class="separator">Bows -------------------------</option>
+								<option value="bonebow">Bone Bow</option>
+								<option value="citadelbow">Citadel Bow</option>
+								<option value="compositebow">Composite Bow</option>
+								<option value="compoundbow">Compound Bow</option>
+								<option value="crudebow">Crude Bow</option>
+								<option value="deathbow">Death Bow</option>
+								<option value="decimationbow">Decimation Bow</option>
+								<option value="decurvebow">Decurve Bow</option>
+								<option value="grovebow">Grove Bow</option>
+								<option value="harbingerbow">Harbinger Bow</option>
+								<option value="highbornbow">Highborn Bow</option>
+								<option value="imperialbow">Imperial Bow</option>
+								<option value="ivorybow">Ivory Bow</option>
+								<option value="longbow">Long Bow</option>
+								<option value="marakethbow">Maraketh Bow</option>
+								<option value="rangerbow">Ranger Bow</option>
+								<option value="recurvebow">Recurve Bow</option>
+								<option value="royalbow">Royal Bow</option>
+								<option value="shortbow">Short Bow</option>
+								<option value="sniperbow">Sniper Bow</option>
+								<option value="spinebow">Spine Bow</option>
+								<option value="thicketbow">Thicket Bow</option>
+
+								<option value="cancel" class="separator">Claws ------------------------</option>
+								<option value="awl">Awl</option>
+								<option value="blinder">Blinder</option>
+								<option value="catspaw">Cat's Paw</option>
+								<option value="eagleclaw">Eagle Claw</option>
+								<option value="eyegouger">Eye Gouger</option>
+								<option value="frightclaw">Fright Claw</option>
+								<option value="gouger">Gouger</option>
+								<option value="greatwhiteclaw">Great White Claw</option>
+								<option value="gutripper">Gut Ripper</option>
+								<option value="hellionspaw">Hellion's Paw</option>
+								<option value="imperialclaw">Imperial Claw</option>
+								<option value="nailedfist">Nailed Fist</option>
+								<option value="nobleclaw">Noble Claw</option>
+								<option value="prehistoricclaw">Prehistoric Claw</option>
+								<option value="sharktoothclaw">Sharktooth Claw</option>
+								<option value="sparklingclaw">Sparkling Claw</option>
+								<option value="terrorclaw">Terror Claw</option>
+								<option value="thresherclaw">Thresher Claw</option>
+								<option value="throatstabber">Throat Stabber</option>
+								<option value="tigerspaw">Tiger's Paw</option>
+								<option value="timewornclaw">Timeworn Claw</option>
+								<option value="vaalclaw">Vaal Claw</option>
+								<!-- Cancel that ' ok -->
+
+								<option value="cancel" class="separator">Daggers ----------------------</option>
+								<option value="ambusher">Ambusher</option>
+								<option value="bootblade">Boot Blade</option>
+								<option value="bootknife">Boot Knife</option>
+								<option value="butcherknife">Butcher Knife</option>
+								<option value="carvingknife">Carving Knife</option>
+								<option value="copperkris">Copper Kris</option>
+								<option value="demondagger">Demon Dagger</option>
+								<option value="ezomytedagger">Ezomyte Dagger</option>
+								<option value="fienddagger">Fiend Dagger</option>
+								<option value="flayingknife">Flaying Knife</option>
+								<option value="glassshank">Glass Shank</option>
+								<option value="goldenkris">Golden Kris</option>
+								<option value="guttingknife">Gutting Knife</option>
+								<option value="impdagger">Imp Dagger</option>
+								<option value="imperialskean">Imperial Skean</option>
+								<option value="platinumkris">Platinum Kris</option>
+								<option value="poignard">Poignard</option>
+								<option value="royalskean">Royal Skean</option>
+								<option value="skean">Skean</option>
+								<option value="skinningknife">Skinning Knife</option>
+								<option value="slaughterknife">Slaughter Knife</option>
+								<option value="stiletto">Stiletto</option>
+
+								<option value="cancel" class="separator">Maces ------------------------</option>
+								<option value="ancestralclub">Ancestral Club</option>
+								<option value="auricmace">Auric Mace</option>
+								<option value="barbedclub">Barbed Club</option>
+								<option value="battlehammer">Battle Hammer</option>
+								<option value="bladedmace">Bladed Mace</option>
+								<option value="ceremonialmace">Ceremonial Mace</option>
+								<option value="dreammace">Dream Mace</option>
+								<option value="driftwoodclub">Driftwood Club</option>
+								<option value="flangedmace">Flanged Mace</option>
+								<option value="gavel">Gavel</option>
+								<option value="legionhammer">Legion Hammer</option>
+								<option value="nightmaremace">Nightmare Mace</option>
+								<option value="ornatemace">Ornate Mace</option>
+								<option value="pernarch">Pernarch</option>
+								<option value="petrifiedclub">Petrified Club</option>
+								<option value="phantommace">Phantom Mace</option>
+								<option value="rockbreaker">Rock Breaker</option>
+								<option value="spikedclub">Spiked Club</option>
+								<option value="stonehammer">Stone Hammer</option>
+								<option value="tenderizer">Tenderizer</option>
+								<option value="tribalclub">Tribal Club</option>
+								<option value="warhammer">War Hammer</option>
+								
+								<option value="cancel" class="separator">Two Handed Maces -------------</option>
+								<option value="brassmaul">Brass Maul</option>
+								<option value="colossusmallet">Colossus Mallet</option>
+								<option value="dreadmaul">Dread Maul</option>
+								<option value="driftwoodmaul">Driftwood Maul</option>
+								<option value="frightmaul">Fright Maul</option>
+								<option value="greatmallet">Great Mallet</option>
+								<option value="imperialmaul">Imperial Maul</option>
+								<option value="karuimaul">Karui Maul</option>
+								<option value="mallet">Mallet</option>
+								<option value="meatgrinder">Meatgrinder</option>
+								<option value="piledriver">Piledriver</option>
+								<option value="platedmaul">Plated Maul</option>
+								<option value="sledgehammer">Sledgehammer</option>
+								<option value="spikedmaul">Spiked Maul</option>
+								<option value="spinymaul">Spiny Maul</option>
+								<option value="steelhead">Steelhead</option>
+								<option value="terrormaul">Terror Maul</option>
+								<option value="totemicmaul">Totemic Maul</option>
+								<option value="tribalmaul">Tribal Maul</option>
+								
+								<option value="cancel" class="separator">Sceptres ---------------------</option>
+								<option value="abyssalsceptre">Abyssal Sceptre</option>
+								<option value="bloodsceptre">Blood Sceptre</option>
+								<option value="bronzesceptre">Bronze Sceptre</option>
+								<option value="carnalsceptre">Carnal Sceptre</option>
+								<option value="crystalsceptre">Crystal Sceptre</option>
+								<option value="darkwoodsceptre">Darkwood Sceptre</option>
+								<option value="driftwoodsceptre">Driftwood Sceptre</option>
+								<option value="grinningfetish">Grinning Fetish</option>
+								<option value="ironsceptre">Iron Sceptre</option>
+								<option value="karuisceptre">Karui Sceptre</option>
+								<option value="leadsceptre">Lead Sceptre</option>
+								<option value="ochresceptre">Ochre Sceptre</option>
+								<option value="opalsceptre">Opal Sceptre</option>
+								<option value="platinumsceptre">Platinum Sceptre</option>
+								<option value="quartzsceptre">Quartz Sceptre</option>
+								<option value="ritualsceptre">Ritual Sceptre</option>
+								<option value="royalsceptre">Royal Sceptre</option>
+								<option value="sekhem">Sekhem</option>
+								<option value="shadowsceptre">Shadow Sceptre</option>
+								<option value="tyrantssekhem">Tyrant's Sekhem</option>
+								<option value="vaalsceptre">Vaal Sceptre</option>
+								<option value="voidsceptre">Void Sceptre</option>
+								<!-- Cancel that ' ok -->
+								
+								<option value="cancel" class="separator">Staves -----------------------</option>
+								<option value="coiledstaff">Coiled Staff</option>
+								<option value="ezomytestaff">Ezomyte Staff</option>
+								<option value="foulstaff">Foul Staff</option>
+								<option value="gnarledbranch">Gnarled Branch</option>
+								<option value="highbornstaff">Highborn Staff</option>
+								<option value="imperialstaff">Imperial Staff</option>
+								<option value="ironstaff">Iron Staff</option>
+								<option value="judgementstaff">Judgement Staff</option>
+								<option value="lathi">Lathi</option>
+								<option value="longstaff">Long Staff</option>
+								<option value="maelstromstaff">Maelström Staff</option>
+								<option value="militarystaff">Military Staff</option>
+								<option value="primitivestaff">Primitive Staff</option>
+								<option value="primordialstaff">Primordial Staff</option>
+								<option value="quarterstaff">Quarter Staff</option>
+								<option value="royalstaff">Royal Staff</option>
+								<option value="serpentinestaff">Serpentine Staff</option>
+								<option value="vilestaff">Vile Staff</option>
+								<option value="woodfulstaff">Woodful Staff</option>
+								
+								<option value="cancel" class="separator">Swords -----------------------</option>
+								<option value="ancientsword">Ancient Sword</option>
+								<option value="baselard">Baselard</option>
+								<option value="battlesword">Battle Sword</option>
+								<option value="broadsword">Broad Sword</option>
+								<option value="coppersword">Copper Sword</option>
+								<option value="corsairsword">Corsair Sword</option>
+								<option value="cutlass">Cutlass</option>
+								<option value="duskblade">Dusk Blade</option>
+								<option value="eldersword">Elder Sword</option>
+								<option value="elegantsword">Elegant Sword</option>
+								<option value="eternalsword">Eternal Sword</option>
+								<option value="gemstonesword">Gemstone Sword</option>
+								<option value="gladius">Gladius</option>
+								<option value="gracefulsword">Graceful Sword</option>
+								<option value="legionsword">Legion Sword</option>
+								<option value="midnightblade">Midnight Blade</option>
+								<option value="rustedsword">Rusted Sword</option>
+								<option value="sabre">Sabre</option>
+								<option value="twilightblade">Twilight Blade</option>
+								<option value="vaalblade">Vaal Blade</option>
+								<option value="varisciteblade">Variscite Blade</option>
+								<option value="warsword">War Sword</option>
+								
+								<option value="cancel" class="separator">Thrusting Swords -------------</option>
+								<option value="antiquerapier">Antique Rapier</option>
+								<option value="apexrapier">Apex Rapier</option>
+								<option value="basketrapier">Basket Rapier</option>
+								<option value="batteredfoil">Battered Foil</option>
+								<option value="burnishedfoil">Burnished Foil</option>
+								<option value="dragonbonerapier">Dragonbone Rapier</option>
+								<option value="elegantfoil">Elegant Foil</option>
+								<option value="estoc">Estoc</option>
+								<option value="fancyfoil">Fancy Foil</option>
+								<option value="harpyrapier">Harpy Rapier</option>
+								<option value="jaggedfoil">Jagged Foil</option>
+								<option value="jewelledfoil">Jewelled Foil</option>
+								<option value="pecoraro">Pecoraro</option>
+								<option value="primevalrapier">Primeval Rapier</option>
+								<option value="rustedspike">Rusted Spike</option>
+								<option value="serratedfoil">Serrated Foil</option>
+								<option value="spiraledfoil">Spiraled Foil</option>
+								<option value="temperedfoil">Tempered Foil</option>
+								<option value="thornrapier">Thorn Rapier</option>
+								<option value="vaalrapier">Vaal Rapier</option>
+								<option value="whalebonerapier">Whalebone Rapier</option>
+								<option value="wyrmbonerapier">Wyrmbone Rapier</option>
+
+								<option value="cancel" class="separator">Two Handed Swords ------------</option>
+								<option value="bastardsword">Bastard Sword</option>
+								<option value="butchersword">Butcher Sword</option>
+								<option value="corrodedblade">Corroded Blade</option>
+								<option value="engravedgreatsword">Engraved Greatsword</option>
+								<option value="etchedgreatsword">Etched Greatsword</option>
+								<option value="ezomyteblade">Ezomyte Blade</option>
+								<option value="footmansword">Footman Sword</option>
+								<option value="headmanssword">Headman's Sword</option>
+								<option value="highlandblade">Highland Blade</option>
+								<option value="infernalsword">Infernal Sword</option>
+								<option value="lionsword">Lion Sword</option>
+								<option value="longsword">Long Sword</option>
+								<option value="ornatesword">Ornate Sword</option>
+								<option value="reaversword">Reaver Sword</option>
+								<option value="spectralsword">Spectral Sword</option>
+								<option value="tigersword">Tiger Sword</option>
+								<option value="twohandedsword">Two Handed Sword</option>
+								<option value="vaalgreatsword">Vaal Greatsword</option>
+								<option value="wraithsword">Wraith Sword</option>
+								<!-- Cancel that ' ok -->
+								
+								<option value="cancel" class="separator">Wands ------------------------</option>
+								<option value="carvedwand">Carved Wand</option>
+								<option value="crystalwand">Crystal Wand</option>
+								<option value="demonshorn">Demon's Horn</option>
+								<option value="driftwoodwand">Driftwood Wand</option>
+								<option value="engravedwand">Engraved Wand</option>
+								<option value="faunshorn">Faun's Horn</option>
+								<option value="goatshorn">Goat's Horn</option>
+								<option value="imbuedwand">Imbued Wand</option>
+								<option value="omenwand">Omen Wand</option>
+								<option value="opalwand">Opal Wand</option>
+								<option value="prophecywand">Prophecy Wand</option>
+								<option value="quartzwand">Quartz Wand</option>
+								<option value="sagewand">Sage Wand</option>
+								<option value="serpentwand">Serpent Wand</option>
+								<option value="spiraledwand">Spiraled Wand</option>
+								<option value="tornadowand">Tornado Wand</option>
+								<!-- Cancel that ' ok -->
+
+								<option value="cancel" class="separator">Chests - Armour --------------</option>
+								<option value="arenaplate">Arena Plate</option>
+								<option value="astralplate">Astral Plate</option>
+								<option value="battleplate">Battle Plate</option>
+								<option value="bronzeplate">Bronze Plate</option>
+								<option value="chestplate">Chest Plate</option>
+								<option value="colosseumplate">Colosseum Plate</option>
+								<option value="copperplate">Copper Plate</option>
+								<option value="crusaderplate">Crusade Plate</option>
+								<option value="fullplate">Full Plate</option>
+								<option value="gladiatorplate">Gladiator Plate</option>
+								<option value="gloriousplate">Glorious Plate</option>
+								<option value="goldenplate">Golden Plate</option>
+								<option value="lordlyplate">Lordly Plate</option>
+								<option value="majesticplate">Majestic Plate</option>
+								<option value="platevest">Plate Vest</option>
+								<option value="sunplate">Sun Plate</option>
+								<option value="warplate">War Plate</option>
+								
+								<option value="cancel" class="separator">Chests - Evasion -------------</option>
+								<option value="assassinsgarb">Asassin's Garb</option>
+								<option value="buckskintunic">Buckskin Tunic</option>
+								<option value="coronalleather">Coronal Leather</option>
+								<option value="cutthroatsgarb">Cutthroat's Garb</option>
+								<option value="destinyleather">Destiny Leather</option>
+								<option value="eelskintunic">Eelskin Tunic</option>
+								<option value="exquisiteleather">Exquisite Leather</option>
+								<option value="frontierleather">Frontier Leather</option>
+								<option value="fullleather">Full Leather</option>
+								<option value="gloriousleather">Glorious Leather</option>
+								<option value="shabbyjerkin">Shabby Jerkin</option>
+								<option value="sharkskintunic">Sharkskin Tunic</option>
+								<option value="strappedleather">Strapped Leather</option>
+								<option value="sunleather">Sun Leather</option>
+								<option value="thiefsgarb">Thief's Garb</option>
+								<option value="wildleather">Wild Leather</option>
+								<option value="zodiacleather">Zodiac Leather</option>
+								<!-- Cancel that ' ok -->
+
+								<option value="cancel" class="separator">Chests - Energy Shield -------</option>
+								<option value="cabalistregalia">Cabalist Regalia</option>
+								<option value="conjurersvestment">Conjurer's Vestment</option>
+								<option value="destroyerregalia">Destroyer Regalia</option>
+								<option value="magesvestment">Mage's Vestment</option>
+								<option value="necromancersilks">Necromancer Silks</option>
+								<option value="occultistsvestment">Occultist's Vestment</option>
+								<option value="sagesrobe">Sage's Robe</option>
+								<option value="savantsrobe">Savant's Robe</option>
+								<option value="scholarsrobe">Scholar's Robe</option>
+								<option value="silkrobe">Silk Robe</option>
+								<option value="silkengarb">Silken Garb</option>
+								<option value="silkenvest">Silken Vest</option>
+								<option value="silkenwrap">Silken Wrap</option>
+								<option value="simplerobe">Simple Robe</option>
+								<option value="spidersilkrobe">Spidersilk Robe</option>
+								<option value="vaalregalia">Vaal Regalia</option>
+								<option value="widowsilkrobe">Widowsilk Robe</option>
+								
+								<option value="cancel" class="separator">Chests - Armour/Evasion ------</option>
+								<option value="battlelamellar">Battle Lamellar</option>
+								<option value="commandersbrigandine">Commander's Brigandine</option>
+								<option value="desertbrigandine">Desert Brigandine</option>
+								<option value="dragonscaledoublet">Dragonscale Doublet</option>
+								<option value="fieldlamellar">Field Lamellar</option>
+								<option value="fulldragonscale">Full Dragonscale</option>
+								<option value="fullscalearmour">Full Scale Armour</option>
+								<option value="fullwyrmscale">Full Wyrmscale</option>
+								<option value="generalsbrigandine">General's Brigandine</option>
+								<option value="hussarbrigandine">Hussar Brigandine</option>
+								<option value="infantrybrigandine">Infantry Brigandine</option>
+								<option value="lightbrigandine">Light Brigandine</option>
+								<option value="scaledoublet">Scale Doublet</option>
+								<option value="scalevest">Scale Vest</option>
+								<option value="soldiersbrigandine">Soldier's Brigandine</option>
+								<option value="triumphantlamellar">Triumphant Lamellar</option>
+								<option value="wyrmscaledoublet">Wyrmscale Doublet</option>
+								<!-- Cancel that ' ok -->
+
+
+								<option value="cancel" class="separator">Chests - Armour/Energy Shield </option>
+								<option value="chainhauberk">Chain Hauberk</option>
+								<option value="chainmaildoublet">Chainmail Doublet</option>
+								<option value="chainmailtunic">Chainmail Tunic</option>
+								<option value="chainmailvest">Chainmail Vest</option>
+								<option value="conquestchainmail">Conquest Chainmail</option>
+								<option value="crusaderchainmail">Crusader Chainmail</option>
+								<option value="devoutchainmail">Devout Chainmail</option>
+								<option value="elegantringmail">Elegant Ringmail</option>
+								<option value="fullchainmail">Full Chainmail</option>
+								<option value="fullringmail">Full Ringmail</option>
+								<option value="holychainmail">Holy Chainmail</option>
+								<option value="latticedringmail">Latticed Ringmail</option>
+								<option value="loricatedringmail">Loricated Ringmail</option>
+								<option value="ornateringmail">Ornate Ringmail</option>
+								<option value="ringmailcoat">Ringmail Coat</option>
+								<option value="saintshauberk">Saint's Hauberk</option>
+								<option value="saintlychainmail">Saintly Chainmail</option>
+								<!-- Cancel that ' ok -->
+
+								<option value="cancel" class="separator">Chests - Evasion/Energy Shield</option>
+								<option value="bloodraiment">Blood Raiment</option>
+								<option value="bonearmour">Bone Armour</option>
+								<option value="carnalarmour">Carnal Armour</option>
+								<option value="crimsonraiment">Crimson Raiment</option>
+								<option value="cryptarmour">Crypt Armour</option>
+								<option value="lacqueredgarb">Lacquered Garb</option>
+								<option value="oiledcoat">Oiled Coat</option>
+								<option value="oiledvest">Oiled Vest</option>
+								<option value="paddedjacket">Padded Jacket</option>
+								<option value="paddedvest">Padded Vest</option>
+								<option value="quiltedjacket">Quilted Jacket</option>
+								<option value="sadistgarb">Sadist Garb</option>
+								<option value="scarletraiment">Scarlet Raiment</option>
+								<option value="sentineljacket">Sentinel Jacket</option>
+								<option value="sleekcoat">Sleek Coat</option>
+								<option value="varnishedcoat">Varnished Coat</option>
+								<option value="waxedgarb">Waxed Garb</option>
+								
+								<option value="cancel" class="separator">Chest - Three stats ----------</option>
+								<option value="Sacrificial Garb">Sacrificial Garb</option>
+
+								<!--<option value="cancel" class="separator">Tower Shield -----------------</option>
+								<option value="bronzetowershield"
+								<option value="buckskintowershield
+								<option value="cedartowershield
+								<option value="colossaltowershield
+								<option value="coppertowershield
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="
+								<option value="-->
+
+							<input type="text" data-bind="visible: NeedsValue, value: FilterValue, valueUpdate: 'afterkeydown'">
+							<span class="delete" data-bind="click: $parent.DeleteFilter">Delete</span>
+						</div>
+					</div>
+					<span class="action-link" data-bind="click: AddFilter">Add another parameter</span>
+				</div>
 			</div>
 		</div>
 	</script>

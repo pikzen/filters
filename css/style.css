@@ -61,6 +61,28 @@ header .menu-selector-bar .menu-item:hover {
 	padding-bottom: 15px;
 }
 
+.box-separator {
+	width: 100%;
+	height: 2px;
+	box-shadow: 0px 10px 1px 1px #444;
+	padding: 0;
+	z-index: 5;
+	padding-left: 20px;
+	margin-left: -10px;
+	margin-right: 30px;
+	margin-top: -4px;
+}
+
+.filter-element .collapse-holder {
+	z-index: 0;
+	display: block;
+}
+
+.filter-element .collapse-holder .action-link {
+	color: #222;
+	text-shadow: none;
+}
+
 .borderbox {
 	background-color: #444;
 	color: white;
@@ -82,8 +104,36 @@ select option.separator {
 	margin: 10px;
 	box-shadow: 0 0 5px 1px #ccc;
 	padding: 10px;
+	background-color: #FF9D00;
+	color: white;
 }
 
+.filter-element .action-link {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 1px 1px #444;
+	padding-right: 20px;
+	font-size: 11px;
+}
+
+.filter-element label {
+	text-shadow: 1px 1px #444;
+	font-size: 11px;
+}
+
+.filter-element input, .filter-element label {
+	float: right;
+}
+.collapse-holder {
+	background-color: #ffffff;
+	padding: 5px;
+	margin: 0;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: -10px;
+	margin-top: -15px;
+}
 .filter-show-hide, .filter-item-type, .filter-additional-params {
 	height: 100%;
 	display: inline-block;

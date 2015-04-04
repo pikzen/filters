@@ -61,9 +61,6 @@ function AdditionalFilter() {
 		return self.FilterType() == 'bordercolor';
 	});
 
-
-
-
 	this.FilterComparator = ko.observable("l");
 	this.FilterValue = ko.observable("0");
 	this.FilterRarity = ko.observable("normal");
@@ -110,6 +107,8 @@ function AdditionalFilter() {
 * should apply to, as well as a list of additional filters.
 */
 function FilterViewModel() {
+	FilterViewModel.ID++;
+
 	this.Show = ko.observable("show");
 	this.AdditionalFilters = ko.observableArray([new AdditionalFilter()]);
 	var self = this;
@@ -119,7 +118,14 @@ function FilterViewModel() {
 	this.DeleteFilter = function(item) {
 		self.AdditionalFilters.remove(item);
 	}
+
+	this.collapseFilter = ko.observable(false);
+	this.AttrName = function() {
+		return "collapse-checkbox-" + FilterViewModel.ID;
+	}
 }
+
+FilterViewModel.ID = 0;
 
 function AppViewModel() {
 	this.translator = [];
