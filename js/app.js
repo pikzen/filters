@@ -31,7 +31,9 @@ function AdditionalFilter() {
 		return self.FilterType() == "ilvl" ||
 		       self.FilterType() == "rarity" ||
 		       self.FilterType() == "sockets" ||
-		       self.FilterType() == "linked";
+		       self.FilterType() == "linked" ||
+		       self.FilterType() == 'quality' ||
+		       self.FilterType() == 'droplevel';
 	});
 	this.NeedsValue = ko.computed(function() {
 		return self.FilterType() != "class" &&
