@@ -53,51 +53,42 @@ function AdditionalFilter() {
 		return self.FilterType() != "class" &&
 			   self.FilterType() != "basetype";
 	});
-	this.NeedsBGColor = ko.computed(function() {
-		return self.FilterType() == 'bgcolor';
-	});
-
-	this.NeedsBorderColor = ko.computed(function() {
-		return self.FilterType() == 'bordercolor';
+	this.NeedsDisplayBox = ko.computed(function() {
+		return self.FilterType() == 'bgcolor' ||
+			   self.FilterType() == 'bordercolor' ||
+			   self.FilterType() == 'color';
 	});
 
 	this.FilterComparator = ko.observable("l");
 	this.FilterValue = ko.observable("0");
 	this.FilterRarity = ko.observable("normal");
 	this.FilterClass = ko.observable("amulets");
-	this.FilterBaseType = ko.observable("armingaxe");
-	this.FilterBGColor = ko.computed(function() {
-		if (self.FilterType() != 'bgcolor')
-			return "#444";
+	this.FilterBaseType = ko.observable("");
+
+	var color_function = function(def, filtername, prefix) {
+		if (self.FilterType() != filtername)
+			return def;
 
 		if (self.FilterValue() == "") 
-			return "#444";
+			return def;
 
 		var splitted = self.FilterValue().split(" ");
 		if (splitted.length != 3)
-			return "#444";
+			return def;
 		
 
-		return "#" + parseInt(splitted[0]).toString(16).padLeft(2, '0') + 
+		return prefix + " #" + parseInt(splitted[0]).toString(16).padLeft(2, '0') + 
 			         parseInt(splitted[1]).toString(16).padLeft(2, '0') +  
 			         parseInt(splitted[2]).toString(16).padLeft(2, '0');
+	};
+	this.FilterBGColor     = ko.computed(function() { 
+		return color_function("#444", "bgcolor", "") 
 	});
-	this.FilterBorderColor = ko.computed(function() {
-		if (self.FilterType() != "bordercolor")
-			return "0px solid white";
-
-		if (self.FilterValue() == "") {
-			return "0px solid white";
-		}
-
-		var splitted = self.FilterValue().split(" ");
-		if (splitted.length != 3) {
-			return "0px solid white";
-		}
-		
-		return "5px solid #" + parseInt(splitted[0]).toString(16).padLeft(2, '0') + 
-			         parseInt(splitted[1]).toString(16).padLeft(2, '0') +  
-			         parseInt(splitted[2]).toString(16).padLeft(2, '0');
+	this.FilterBorderColor = ko.computed(function() { 
+		return color_function("0px solid white", "bordercolor", "5px solid") 
+	});
+	this.FilterTextColor       = ko.computed(function() { 
+		return color_function("white", "color", "") 
 	});
 }
 
@@ -142,6 +133,7 @@ function AppViewModel() {
 		this.translator["item-type"]['shields'] = "Shields";
 		this.translator["item-type"]['amulets'] = "Amulets";
 		this.translator["item-type"]['gems']    = "Gems";
+		this.translator["item-type"]['currency']   = "Currency";
 		
 
 		this.translator["comparators"] = [];
@@ -160,18 +152,17 @@ function AppViewModel() {
 		this.translator["additional-filter"]['sockets'] = "Sockets";
 		this.translator["additional-filter"]['linked'] = "LinkedSockets";
 		this.translator["additional-filter"]['socketgroup'] = "SocketGroup";
-		this.translator["additional-filter"]['bordercolor'] = "BorderColor";
-		this.translator["additional-filter"]['bgcolor']     = "BackgroundColor";
+		this.translator["additional-filter"]['bordercolor'] = "SetBorderColor";
+		this.translator["additional-filter"]['bgcolor']     = "SetBackgroundColor";
 		this.translator["additional-filter"]['quality']     = "Quality";
 		this.translator["additional-filter"]['droplevel']   = "DropLevel";
+		this.translator["additional-filter"]['color']   = "SetTextColor";
 
 		this.translator["rarity"] = [];
 		this.translator["rarity"]["normal"] = "Normal";
 		this.translator["rarity"]["magic"]  = "Magic";
 		this.translator["rarity"]["rare"]   = "Rare";
 		this.translator["rarity"]["unique"] = "Unique";
-
-		this.translator["bases"] = [];
 
 		this.init = true;
 	};
@@ -247,7 +238,7 @@ function AppViewModel() {
 					classes.push(this.ValueForKey("item-type", add.FilterClass()));
 
 				if (add.NeedsBaseType())
-					basetypes.push(this.ValueForKey("bases", add.FilterType()));
+					basetypes.push(add.FilterBaseType());
 
 				if (add.NeedsNamedAttribute())
 					str += "\n";

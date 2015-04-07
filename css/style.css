@@ -89,6 +89,11 @@ header .menu-selector-bar .menu-item:hover {
 	padding: 6px;
 }
 
+.textbox {
+	background-color: #444;
+	padding: 6px;
+}
+
 .bgbox {
 	color: white;
 	padding: 6px;
@@ -117,12 +122,20 @@ select option.separator {
 	font-size: 11px;
 }
 
+.filter-element .collapse-holder {
+	color: black;
+}
+
+.filter-element .collapse-holder .action-link.action-link-inline {
+	line-height: 40px;
+}
+
 .filter-element label {
 	text-shadow: 1px 1px #444;
 	font-size: 11px;
 }
 
-.filter-element input, .filter-element label {
+.filter-element input[type="checkbox"], .filter-element label {
 	float: right;
 }
 .collapse-holder {
@@ -157,4 +170,17 @@ select option.separator {
 }
 .filter-element .filter-item-type .filter-additional {
 	display: block;
+}
+
+input.awesomplete {
+	height: 30px;
+	margin-top: 1px;
+}
+
+input.awesomplete ul {
+	margin-bottom: 0;
+}
+
+input.awesomplete .visually-hidden {
+	visibility: hidden;
 }
